@@ -1,6 +1,8 @@
 package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
 
+import static java.lang.Math.sqrt;
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -26,6 +28,7 @@ public class MainApplication {
     }
 
     public static double add(double a, double b){
+//        System.out.println(">>> " + a + " + " + b + " = " + (a+b)); < fancier way to display result but nah
         System.out.println(">>> " + (a + b));
         return a + b;
     }
@@ -56,9 +59,23 @@ public class MainApplication {
        return x * -1; //it works!
     }
 
+    public static double squareRootResult(double x){
+        System.out.println(sqrt(x));
+        return sqrt(x);
+    }
+
+    public static void displaySciMenu(){
+        System.out.println("1. Change Display Mode");
+        System.out.println("2. Trigonometric Functions");
+        System.out.println("3. Logarithmic Functions");
+        System.out.println("4. Factorial Function");
+    }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+
+
 
 //        Console.println("Welcome to my calculator!");
 //        String s = Console.getStringInput("Enter a string");
@@ -75,6 +92,10 @@ public class MainApplication {
         boolean memoryOn = false;
         int userOption;
         double memoryVariable = 0;
+        boolean binaryOn = false;
+        boolean octalOn = false;
+        boolean decimalOn = true;
+        boolean hexadecimalOn = false;
 
 
         displayMainMenu();
@@ -97,21 +118,43 @@ public class MainApplication {
             double displayVar = 0;
             double displayVar2 = 0;
 
+            //for variable 1
             System.out.println("Please enter a number:");
             System.out.println(displayVar);
             displayVar = scanner.nextDouble();
             System.out.println(displayVar);
+
+            //ask for inverse or not
+            System.out.println("Invert sign?");
+            System.out.println("Y/N:");
+            scanner.nextLine();
+            String userInvert = scanner.nextLine();
+            if (userInvert.equalsIgnoreCase("Y")) {
+                invertDouble(displayVar);
+            }
+
+            //for operator
             System.out.println("Type an operator:");
             System.out.println("+");
             System.out.println("-");
             System.out.println("x");
             System.out.println("%");
-//            System.out.println("5. More Operators");
-//            System.out.println("6. Memory");
-            scanner.nextLine();
+//            scanner.nextLine();
             operatorSelect = scanner.nextLine();
+
+            //for variable 2
             System.out.println("Select another number:");
             displayVar2 = scanner.nextDouble();
+            System.out.println(displayVar2); //new
+
+            //inverse option for variable 2
+            System.out.println("Invert sign?");
+            System.out.println("Y/N:");
+            scanner.nextLine();
+            String userInvert2 = scanner.nextLine();
+            if (userInvert2.equalsIgnoreCase("Y")) {
+                displayVar2 = invertDouble(displayVar2);
+            }
 
 
             //BASIC MATH OPERATIONS
@@ -156,6 +199,98 @@ public class MainApplication {
 
             }
 
+        }
+
+        while (scientificOn){
+            displaySciMenu();
+            int sciUserOption = scanner.nextInt();
+            switch (sciUserOption){
+                case 1:
+                    System.out.println("Choose Display Options:");
+                    System.out.println("1. Binary");
+                    System.out.println("2. Octal");
+                    System.out.println("3. Decimal");
+                    System.out.println("4. Hexadecimal");
+                    int displayUserOption = scanner.nextInt();
+                    switch (displayUserOption) {
+                        case 1:
+                            binaryOn = true;
+                            System.out.println("Binary is " + binaryOn);
+                            break;
+                        case 2:
+                            octalOn = true;
+                            System.out.println("Octal is " + octalOn);
+                            break;
+                        case 3:
+                            decimalOn = false;
+                            System.out.println("Decimal is " + decimalOn);
+                            break;
+                        case 4:
+                            hexadecimalOn = true;
+                            System.out.println("Hexadecimal is " + hexadecimalOn);
+                            break;
+                    }
+                    break;
+                case 2:
+                    System.out.println("Choose Trigonometric Function:");
+                    System.out.println("1. Sine");
+                    System.out.println("2. Cosine");
+                    System.out.println("3. Tangent");
+                    System.out.println("4. Inverse Sine");
+                    System.out.println("5. Inverse Cosine");
+                    System.out.println("6. Inverse Tangent");
+                    System.out.println("7. Switch Unit Modes");
+                    int trigUserOption = scanner.nextInt();
+                    switch (trigUserOption){
+                        case 1:
+                            System.out.println("Calculate sin of a number:");
+                            double sinUser = scanner.nextInt();
+                            //calculate sin here
+                            break;
+                    }
+                    break;
+                case 3:
+                    LogCalc logCalc = new LogCalc();
+                    System.out.println("Choose Logarithmic Functions:");
+                    System.out.println("1. Log");
+                    System.out.println("2. Inverse Log");
+                    System.out.println("3. Natural Log");
+                    System.out.println("4. Inverse Natural Log");
+                    int logUserOption = scanner.nextInt();
+                    switch (logUserOption){
+                        case 1://for LOG
+                            System.out.println("Enter base number:");
+                            double logA = scanner.nextDouble();
+                            System.out.println("Enter second number:");
+                            double logB = scanner.nextDouble();
+                            System.out.println(">>> " + logCalc.logarithm(logA, logB));
+                            break;
+                        case 2://for INVERSE LOG
+                            System.out.println("Enter base number:");
+                            double logC = scanner.nextDouble();
+                            System.out.println("Enter second number:");
+                            double logD = scanner.nextDouble();
+                            System.out.println(">>> " + logCalc.inverseLogarithm(logC, logD));
+                            break;
+                        case 3: //for NATURAL LOG
+                            System.out.println("Enter a number:");
+                            double logE = scanner.nextDouble();
+                            System.out.println(">>> " + logCalc.naturalLogarithm(logE));
+                            break;
+                        case 4: //for INVERSE NATURAL LOG
+                            System.out.println("Enter a number:");
+                            double logF = scanner.nextDouble();
+                            System.out.println(">>> " + logCalc.inverseNaturalLogarithm(logF));
+                            break;
+                    }
+                    break;
+                case 4:
+                    System.out.println("factorial");
+                    break;
+                default:
+                    System.out.println("Not an option.");
+            }
+            break;
         }
 
 
