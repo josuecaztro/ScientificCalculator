@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientific_calculator;
 import com.zipcodewilmington.scientificcalculator.MainApplication;
+import com.zipcodewilmington.scientificcalculator.ScientificCalculator;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Random;
@@ -13,7 +14,7 @@ public class TestMainApplication {
 
     @Test
     void testAdd(){
-        MainApplication mainApp = new MainApplication();
+        ScientificCalculator mainApp = new ScientificCalculator();
         Random random = new Random();
 
         int a = random.nextInt(1000);

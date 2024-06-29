@@ -28,8 +28,15 @@ public class Calculator {
     }
 
     public double exponentiate(double base, double exponent) {
+        System.out.println(Math.pow(base, exponent));
         return Math.pow(base, exponent);
     }
+
+    public double inverse(double num){
+        return 1 / num;
+    }
+
+
 }
 
 
