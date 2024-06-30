@@ -62,7 +62,8 @@ public class ScientificCalculator {
                 //      This makes memory work and I fixed bug so Continue works as well
                 if (firstAnswer == false) {
                     System.out.println("Please enter a number: [or type M: MRC]");
-                    System.out.println(displayVar);
+//                    System.out.println(displayVar); (testing a bug keep for reference)
+                    System.out.println(0);
 
                     if (scanner.hasNextDouble()) {
                         displayVar = scanner.nextDouble();
@@ -93,13 +94,13 @@ public class ScientificCalculator {
 
                 operatorSelect = scanner.nextLine();
                 if (operatorSelect.equalsIgnoreCase("B")) {
-                    System.out.println(calculator.squareRoot(displayVar));
+                    System.out.println(">>> " + calculator.squareRoot(displayVar));
                     break;
                 } else if (operatorSelect.equalsIgnoreCase("A")) {
-                    System.out.println(calculator.square(displayVar));
+                    System.out.println(">>> " + calculator.square(displayVar));
                     break;
                 } else if (operatorSelect.equalsIgnoreCase("D")) {
-                    System.out.println(calculator.inverse(displayVar));
+                    System.out.println(">>> " + calculator.inverse(displayVar));
                     break;
                 }
 
