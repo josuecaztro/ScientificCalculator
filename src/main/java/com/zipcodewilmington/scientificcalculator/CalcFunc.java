@@ -9,6 +9,8 @@ public class CalcFunc {
         System.out.println("MAIN MENU:");
         System.out.println("1. Main Calculator");
         System.out.println("2. Scientific Calculator");
+        System.out.println("3. Custom Features");
+        System.out.println("4. End Application");
 //        System.out.println("3. Use Memory");
         System.out.println("********************");
         System.out.println("Select an option:");
