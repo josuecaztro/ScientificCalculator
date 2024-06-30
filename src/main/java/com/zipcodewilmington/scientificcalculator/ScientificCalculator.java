@@ -46,16 +46,34 @@ public class ScientificCalculator {
                         Calculator calculator = new Calculator();
 
 
-                        //for variable 1
-                        if (firstAnswer == false) {
-                            System.out.println("Please enter a number:");
-//                        System.out.println("Retrieve Memory Value - Type M");
+                        //for variable 1 - this one works :)
+//                        if (firstAnswer == false) {
+//                            System.out.println("Please enter a number:");
+//                            System.out.println(displayVar);
+//                            displayVar = scanner.nextDouble();
+//                            System.out.println(displayVar);
+//                        } else {
+//                            result = displayVar;
+//                        }
+
+                  //      This makes memory work and I fixed bug so Continue works as well
+                        if (firstAnswer == false){
+                            System.out.println("Please enter a number: (or type M)");
                             System.out.println(displayVar);
+
+                            if (scanner.hasNextDouble()){
                             displayVar = scanner.nextDouble();
                             System.out.println(displayVar);
-                        } else {
-                            result = displayVar;
-                        }
+                            } else if (scanner.hasNext()) {
+                                String memInput = scanner.next();
+                                if (memInput.equalsIgnoreCase("m")) {
+                                    displayVar = memoryVariable;
+                                    System.out.println(displayVar);
+                                }
+                            }} else {
+                                result = displayVar;
+                            }
+
 
 //                        ask for inverse or not
 //                        System.out.println("Invert sign? Y/N");
@@ -122,6 +140,7 @@ public class ScientificCalculator {
 
                         if (nextOption == 1) {
                             System.out.println("***CLEARED***");
+                            firstAnswer = false;
                             displayVar = 0;
                         } else if (nextOption == 2) {
                             int memorySelectOption;
@@ -131,15 +150,20 @@ public class ScientificCalculator {
                                 case 1:
                                     memoryVariable = result;
                                     System.out.println(">>> Memory Value Saved: " + memoryVariable);
+                                    displayVar = 0;
+//                                    System.out.println(displayVar); //just added this idk
                                     break;
                                 case 2:
                                     memoryVariable = 0;
                                     System.out.println(">>> Memory Value CLEARED.");
                                     break;
-                                case 3:
-                                    System.out.println(">>> Current Memory Value: " + memoryVariable);
-                                    displayVar = memoryVariable;
-                                    break;
+//                                case 3:
+//                                    System.out.println(">>> Current Memory Value: " + memoryVariable);
+//                                    displayVar = memoryVariable;
+//                                    firstAnswer = true;
+//                                    System.out.println(displayVar);
+//                                    System.out.println("Type C to continue.");
+//                                    break;
                             }
 
                         } else if (nextOption == 3) {

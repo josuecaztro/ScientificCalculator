@@ -60,18 +60,35 @@ public class Calculator {
         return x * -1; //it works!
     }
 
-    if (scanner.hasNextDouble){
-        displayVar = scanner.nextDouble();
-        System.out.println(displayVar);
-    } else if (scanner.hasNext()){
-        String memInput = scanner.next();
-        if (memInput.equalsIgnoreCase(m)){
-            displayVar = memoryVariable;
-            System.out.println(displayVar);
-        } else {
-            result = displayVar;
-        }
-    }
+
+   // THIS IS AN ATTEMPT TO GET MEMORY VARIABLE WORKING!!!
+//    if (scanner.hasNextDouble){
+//        displayVar = scanner.nextDouble();
+//        System.out.println(displayVar);
+//    } else if (scanner.hasNext()){
+//        String memInput = scanner.next();
+//        if (memInput.equalsIgnoreCase(m)){
+//            displayVar = memoryVariable;
+//            System.out.println(displayVar);
+//        } else {
+//            result = displayVar;
+//        }
+//    }
+
+
+
+       //THIS SHOULD WORK FOR VARIABLE 2 INPUT THEORETICALLY
+//       System.out.println("Select another number: [or type M: MRC]");
+//       if (scanner.hasNextDouble()){
+//        displayVar2 = scanner.nextDouble();
+//        System.out.println(displayVar2);
+//    } else if (scanner.hasNext()){
+//           String memInput2 = scanner.next();
+//           if (memInput2.equalsIgnoreCase("m")){
+//               displayVar2 = memoryVariable;
+//               System.out.println(displayVar2);
+//           }
+//    }
 
 
 
