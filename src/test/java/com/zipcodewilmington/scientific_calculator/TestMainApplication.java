@@ -12,19 +12,25 @@ import java.util.Random;
 
 public class TestMainApplication {
 
-    @Test
-    void testAdd(){
-        ScientificCalculator mainApp = new ScientificCalculator();
-        Random random = new Random();
 
-        int a = random.nextInt(1000);
-        int b = random.nextInt(1000);
-        int result = a + b;
-        System.out.println(a + " + " + b + " = " + result);
-//        assertEquals(result, mainApp.add(a,b), "Error!!!");
-    }
+
+
+
+}
+//
+//    @Test
+//    void testAdd(){
+//        ScientificCalculator mainApp = new ScientificCalculator();
+//        Random random = new Random();
+//
+//        int a = random.nextInt(1000);
+//        int b = random.nextInt(1000);
+//        int result = a + b;
+//        System.out.println(a + " + " + b + " = " + result);
+////        assertEquals(result, mainApp.add(a,b), "Error!!!");
+//    }
 
     //I HAD TO SET TEST FOLDER TO TEST SOURCE AND ONCE I MARKED THAT IT WORKED
 
 
-}
+
