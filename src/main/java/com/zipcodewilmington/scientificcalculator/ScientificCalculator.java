@@ -69,16 +69,6 @@ public class ScientificCalculator {
 
         public static void main (String[]args) {
                 Scanner scanner = new Scanner(System.in);
-
-
-//        Console.println("Welcome to my calculator!");
-//        String s = Console.getStringInput("Enter a string");
-//        Integer i = Console.getIntegerInput("Enter an integer");
-//        Double d = Console.getDoubleInput("Enter a double.");
-//
-//        Console.println("The user input %s as a string", s);
-//        Console.println("The user input %s as a integer", i);
-//        Console.println("The user input %s as a d", d);
                 String operatorSelect;
                 double answer;
                 boolean calculatorOn = false;
@@ -112,15 +102,17 @@ public class ScientificCalculator {
 
                 while (calculatorOn) {
                     Calculator calculator = new Calculator();
-
                     double displayVar = 0;
                     double displayVar2 = 0;
 
                     //for variable 1
-                    System.out.println("Please enter a number:");
-                    System.out.println(displayVar);
-                    displayVar = scanner.nextDouble();
-                    System.out.println(displayVar);
+
+                        System.out.println("Please enter a number:");
+                        System.out.println("R Memory Value - Type M");
+                        System.out.println(displayVar);
+                        displayVar = scanner.nextDouble();
+                        System.out.println(displayVar);
+
 
                     //ask for inverse or not
                     System.out.println("Invert sign?");
@@ -208,6 +200,7 @@ public class ScientificCalculator {
                                 break;
                             case 3:
                                 System.out.println(">>> Current Memory Value: " + memoryVariable);
+                                displayVar = memoryVariable;
                                 break;
                         }
 
