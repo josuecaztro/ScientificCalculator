@@ -66,16 +66,9 @@ public class ScientificCalculator {
 //                        }
 
                         //for operator
-                        System.out.println("Type an operator:");
-                        System.out.println("+");
-                        System.out.println("-");
-                        System.out.println("x");
-                        System.out.println("%");
-                        System.out.println("A. Square");
-                        System.out.println("B. Square Root");
-                        System.out.println("C. Exponentiation");
-                        System.out.println("D. Inverse");
+                       calcFunc.displayOperations();
 //            scanner.nextLine();
+
                         operatorSelect = scanner.nextLine();
                         if (operatorSelect.equalsIgnoreCase("B")) {
                             System.out.println(calculator.squareRoot(displayVar));
@@ -174,11 +167,7 @@ public class ScientificCalculator {
                         switch (sciUserOption) {
                             case 1:
 //                                scientific.convertToInt(69);
-                                System.out.println("Choose Display Options:");
-                                System.out.println("1. Binary");
-                                System.out.println("2. Octal");
-                                System.out.println("3. Decimal");
-                                System.out.println("4. Hexadecimal");
+                                calcFunc.displaySciDisplayMode();
                                 int displayUserOption = scanner.nextInt();
                                 switch (displayUserOption) {
                                     case 1:
@@ -196,14 +185,7 @@ public class ScientificCalculator {
                                 }
                                 break;
                             case 2:
-                                System.out.println("Choose Trigonometric Function:");
-                                System.out.println("1. Sine");
-                                System.out.println("2. Cosine");
-                                System.out.println("3. Tangent");
-                                System.out.println("4. Inverse Sine");
-                                System.out.println("5. Inverse Cosine");
-                                System.out.println("6. Inverse Tangent");
-                                System.out.println("7. Switch Unit Modes");
+                                calcFunc.displayTrigMenu();
                                 int trigUserOption = scanner.nextInt();
                                 switch (trigUserOption) {
                                     case 1:
@@ -240,11 +222,7 @@ public class ScientificCalculator {
                                 break;
                             case 3:
                                 LogCalc logCalc = new LogCalc();
-                                System.out.println("Choose Logarithmic Functions:");
-                                System.out.println("1. Log");
-                                System.out.println("2. Inverse Log");
-                                System.out.println("3. Natural Log");
-                                System.out.println("4. Inverse Natural Log");
+                                calcFunc.displayLogMenu();
                                 int logUserOption = scanner.nextInt();
                                 switch (logUserOption) {
                                     case 1://for LOG

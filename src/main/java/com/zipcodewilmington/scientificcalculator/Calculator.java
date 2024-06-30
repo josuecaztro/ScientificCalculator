@@ -60,6 +60,20 @@ public class Calculator {
         return x * -1; //it works!
     }
 
+    if (scanner.hasNextDouble){
+        displayVar = scanner.nextDouble();
+        System.out.println(displayVar);
+    } else if (scanner.hasNext()){
+        String memInput = scanner.next();
+        if (memInput.equalsIgnoreCase(m)){
+            displayVar = memoryVariable;
+            System.out.println(displayVar);
+        } else {
+            result = displayVar;
+        }
+    }
+
+
 
 }
 
