@@ -58,7 +58,7 @@ public class Scientific {
             double inRad = Math.asin(a); //calculate sin automatically in radian
             double inDeg = Math.toRadians(a); // convert degree input into radian
             Scanner radDeg = new Scanner(System.in);
-            System.out.println("Display in Radians: R \nDDisplay in Degrees: D"); //Ask user if the want display in Radians or degrees
+            System.out.println("Display in Radians: R \nDisplay in Degrees: D"); //Ask user if the want display in Radians or degrees
             String entry = radDeg.nextLine();
             if (entry.equalsIgnoreCase("R")) {  //conditional statement based on user response
                 if (a >= -1 && a <= 1) {
@@ -79,7 +79,7 @@ public class Scientific {
             double inRad = Math.acos(a); //calculate sin automatically in radian
             double inDeg = Math.toDegrees(inRad); // convert degree input into radian
             Scanner radDeg = new Scanner(System.in);
-            System.out.println("Display in Radians: R \nDDisplay in Degrees: D"); //Ask user if the want display in Radians or degrees
+            System.out.println("Display in Radians: R \nDisplay in Degrees: D"); //Ask user if the want display in Radians or degrees
             String entry = radDeg.nextLine();
             if (entry.equalsIgnoreCase("R")) {  //conditional statement based on user response
                 if (a >= -1 && a <= 1) {  // arccos is between -1 and 1. outside of that range is NaN

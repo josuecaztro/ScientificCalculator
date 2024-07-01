@@ -11,7 +11,6 @@ import com.zipcodewilmington.scientificcalculator.ScientificCalculator;
 public class MainApplication {
 public static void main (String [] args) {
     ScientificCalculator fullProject = new ScientificCalculator();
-
 //    fullProject.run();
 }
 }

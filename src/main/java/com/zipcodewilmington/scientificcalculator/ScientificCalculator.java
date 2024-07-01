@@ -195,6 +195,7 @@ public class ScientificCalculator {
                             memoryVariable = result;
                             System.out.println(">>> Memory Value Saved: " + memoryVariable);
                             displayVar = 0;
+                            firstAnswer = false;//added
 //                                    System.out.println(displayVar); //just added this idk
                             break;
                         case 2:
