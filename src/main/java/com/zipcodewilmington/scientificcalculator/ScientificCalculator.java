@@ -11,26 +11,30 @@ public class ScientificCalculator {
     static boolean decimalOn = true;
     static boolean hexadecimalOn = false;
 
-    public static void switchToDisplayMode(double x){
+    public static String switchToDisplayMode(double x){
         if (binaryOn){
             octalOn = false;
             decimalOn = false;
             hexadecimalOn = false;
-            Scientific.convertToBin(x);
+            return Scientific.convertToBin(x);
         } else if (octalOn){
             binaryOn = false;
             decimalOn = false;
             hexadecimalOn = false;
-            Scientific.convertToOct(x);
+            return Scientific.convertToOct(x);
         } else if (hexadecimalOn){
             binaryOn = false;
             octalOn = false;
             decimalOn = false;
-            Scientific.convertToHex(x);
+            return Scientific.convertToHex(x);
+        } else {
+            String meh = "Decimal Mode On.";
+            return meh;
         }
     }
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         String operatorSelect;
         double answer;
@@ -236,18 +240,27 @@ public class ScientificCalculator {
                         switch (displayUserOption) {
                             case 1:
                                 binaryOn = true;
+                                octalOn = false;
+                                hexadecimalOn = false;
                                 System.out.println("Binary is now ON");
                                 break;
                             case 2:
                                 octalOn = true;
+                                binaryOn = false;
+                                hexadecimalOn = false;
                                 System.out.println("Octal is now ON");
                                 break;
                             case 3:
                                 decimalOn = false;
+                                octalOn = false;
+                                hexadecimalOn = false;
+                                binaryOn = false;
                                 System.out.println("Decimal is now ON");
                                 break;
                             case 4:
                                 hexadecimalOn = true;
+                                binaryOn = false;
+                                octalOn = false;
                                 System.out.println("Hexadecimal is now ON");
                                 break;
                         }
@@ -260,31 +273,37 @@ public class ScientificCalculator {
                                 System.out.println("Calculate sin of a number:");
                                 double sinUser = scanner.nextDouble();
                                 scientific.sin(sinUser);
+                                System.out.println(switchToDisplayMode(scientific.sin(sinUser)));
                                 break;
                             case 2:
                                 System.out.println("Calculate cos of a number:");
                                 double cosUser = scanner.nextDouble();
                                 scientific.cos(cosUser);
+                                System.out.println(switchToDisplayMode(scientific.cos(cosUser)));
                                 break;
                             case 3:
                                 System.out.println("Calculate tan of a number:");
                                 double tanUser = scanner.nextDouble();
                                 scientific.tan(tanUser);
+                                System.out.println(switchToDisplayMode(scientific.tan(tanUser)));
                                 break;
                             case 4:
                                 System.out.println("Calculate Inverse sin of a number:");
                                 double InSinUser = scanner.nextDouble();
                                 scientific.inSin(InSinUser);
+                                System.out.println(switchToDisplayMode(scientific.inSin(InSinUser)));
                                 break;
                             case 5:
                                 System.out.println("Calculate Inverse cos of a number:");
                                 double InCosUser = scanner.nextDouble();
                                 scientific.inCos(InCosUser);
+                                System.out.println(switchToDisplayMode(scientific.inCos(InCosUser)));
                                 break;
                             case 6:
                                 System.out.println("Calculate Inverse tan of a number:");
                                 double InTanUser = scanner.nextDouble();
                                 scientific.inTan(InTanUser);
+                                System.out.println(switchToDisplayMode(scientific.inTan(InTanUser)));
                                 break;
                         }
                         break;
@@ -299,6 +318,7 @@ public class ScientificCalculator {
                                 System.out.println("Enter second number:");
                                 double logB = scanner.nextDouble();
                                 System.out.println(">>> " + logCalc.logarithm(logA, logB));
+                                System.out.println(switchToDisplayMode(logCalc.logarithm(logA,logB)));
                                 break;
                             case 2://for INVERSE LOG
                                 System.out.println("Enter base number:");
@@ -306,16 +326,19 @@ public class ScientificCalculator {
                                 System.out.println("Enter second number:");
                                 double logD = scanner.nextDouble();
                                 System.out.println(">>> " + logCalc.inverseLogarithm(logC, logD));
+                                System.out.println(switchToDisplayMode(logCalc.inverseLogarithm(logC, logD)));
                                 break;
                             case 3: //for NATURAL LOG
                                 System.out.println("Enter a number:");
                                 double logE = scanner.nextDouble();
-                                System.out.println(">>> " + logCalc.naturalLogarithm(logE));
+                                System.out.println(">>>  " + logCalc.naturalLogarithm(logE));
+                                System.out.println(switchToDisplayMode(logCalc.naturalLogarithm(logE)));
                                 break;
                             case 4: //for INVERSE NATURAL LOG
                                 System.out.println("Enter a number:");
                                 double logF = scanner.nextDouble();
                                 System.out.println(">>> " + logCalc.inverseNaturalLogarithm(logF));
+                                System.out.println(switchToDisplayMode(logCalc.inverseNaturalLogarithm(logF)));
                                 break;
                         }
                         break;
@@ -323,6 +346,7 @@ public class ScientificCalculator {
                         System.out.println("Enter a number:");
                         double factorialNum = scanner.nextDouble();
                         System.out.println(scientific.factorial(factorialNum));
+                        System.out.println(switchToDisplayMode(scientific.factorial(factorialNum)));
                         break;
                     case 5:
                         scientificOn = false;

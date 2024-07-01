@@ -122,22 +122,25 @@ public class Scientific {
             return sum;
         }
 
-        public static void convertToHex(double a){
+        public static String convertToHex(double a){
             int intValue = (int) Math.round(a);
             String hex = Integer.toHexString(intValue);
-            System.out.println(hex);
+            System.out.println(">>> As Hexadecimal: ");
+            return hex;
         }
 
-        public static void convertToBin(double a){
+        public static String convertToBin(double a){
             int intValue = (int) Math.round(a);
             String binary = Integer.toBinaryString(intValue);
-            System.out.println(binary);
+            System.out.println(">>> As Binary: ");
+            return binary;
         }
 
-        public static void convertToOct(double a){
+        public static String convertToOct(double a){
             int intValue = (int) Math.round(a);
             String octal = Integer.toOctalString(intValue);
-            System.out.println(octal);
+            System.out.println(">>> As Octal: ");
+            return octal;
         }
 
 
