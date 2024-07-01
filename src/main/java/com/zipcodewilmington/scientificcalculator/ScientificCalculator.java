@@ -118,7 +118,7 @@ public class ScientificCalculator {
                 operatorSelect = scanner.nextLine();
                 if (operatorSelect.equalsIgnoreCase("B")) {
                     System.out.println(">>> " + calculator.squareRoot(displayVar));
-                    break;
+                  break;
                 } else if (operatorSelect.equalsIgnoreCase("A")) {
                     System.out.println(">>> " + calculator.square(displayVar));
                     break;
