@@ -122,20 +122,20 @@ public class Scientific {
         }
 
     public void convertToHex(double a){
-        int intValue = (int) Math.round(a);
-        String hex = Integer.toHexString(intValue);
+        int intValue = (int) Math.round(a); // convert to int by rounding the double
+        String hex = Integer.toHexString(intValue); //int to hex
         System.out.println(hex);
     }
 
     public void convertToBin(double a){
-        int intValue = (int) Math.round(a);
-        String binary = Integer.toBinaryString(intValue);
+        int intValue = (int) Math.round(a);// convert to int by rounding the double
+        String binary = Integer.toBinaryString(intValue);//int to Binary
         System.out.println(binary);
     }
 
     public void convertToOct(double a){
-        int intValue = (int) Math.round(a);
-        String octal = Integer.toOctalString(intValue);
+        int intValue = (int) Math.round(a);// convert to int by rounding the double
+        String octal = Integer.toOctalString(intValue);//int to Octal
         System.out.println(octal);
     }
 

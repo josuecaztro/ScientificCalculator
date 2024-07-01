@@ -26,9 +26,7 @@ public class LogCalc {
 //        public double inverse(double a){
 //            return 1/a;
 //        }
-    public double logarithm(double base, double number) {
-        return Math.log(number) / Math.log(base);
-    }
+    public double logarithm(double base, double number) {return Math.log(number) / Math.log(base);}
 
     public double inverseLogarithm(double base, double logValue) {
         return Math.pow(base, logValue);
@@ -38,9 +36,7 @@ public class LogCalc {
         return Math.log(number);
     }
 
-    public double inverseNaturalLogarithm (double number){
-            return Math.exp(number);
-        }
+    public double inverseNaturalLogarithm (double number){return Math.exp(number); }
 
 
 }
