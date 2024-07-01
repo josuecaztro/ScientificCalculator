@@ -39,7 +39,7 @@ public class LogCalcTest extends TestCase {
         double expected = Math.exp(a);
 
 
-        double result = invNaturalLog.naturalLogarithm(a);
-        assertEquals(expected, result, .0001); ////  TEST FAILED..
+        double result = invNaturalLog.inverseNaturalLogarithm(a);
+        assertEquals(expected, result, .0001); ////  Test passed
     }
 }
