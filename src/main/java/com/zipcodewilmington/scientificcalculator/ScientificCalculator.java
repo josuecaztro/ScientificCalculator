@@ -1,11 +1,35 @@
 package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
-import static java.lang.Math.*;
 
 //THIS IS MY DEPLOYMENT BRANCH
-
+//THE CORRECT ONE *****
 
 public class ScientificCalculator {
+
+    static boolean binaryOn = false;
+    static boolean octalOn = false;
+    static boolean decimalOn = true;
+    static boolean hexadecimalOn = false;
+
+    public static void switchToDisplayMode(double x){
+        if (binaryOn){
+            octalOn = false;
+            decimalOn = false;
+            hexadecimalOn = false;
+            Scientific.convertToBin(x);
+        } else if (octalOn){
+            binaryOn = false;
+            decimalOn = false;
+            hexadecimalOn = false;
+            Scientific.convertToOct(x);
+        } else if (hexadecimalOn){
+            binaryOn = false;
+            octalOn = false;
+            decimalOn = false;
+            Scientific.convertToHex(x);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String operatorSelect;
@@ -16,10 +40,6 @@ public class ScientificCalculator {
         boolean memoryOn = false;
         int userOption;
         double memoryVariable = 0;
-        boolean binaryOn = false;
-        boolean octalOn = false;
-        boolean decimalOn = true;
-        boolean hexadecimalOn = false;
         CalcFunc calcFunc = new CalcFunc();
         boolean firstAnswer = false;
         double displayVar = 0;
@@ -201,7 +221,6 @@ public class ScientificCalculator {
                     displayVar = 0;
                     break;
                 }
-
             }
 
 
@@ -217,15 +236,19 @@ public class ScientificCalculator {
                         switch (displayUserOption) {
                             case 1:
                                 binaryOn = true;
+                                System.out.println("Binary is now ON");
                                 break;
                             case 2:
                                 octalOn = true;
+                                System.out.println("Octal is now ON");
                                 break;
                             case 3:
                                 decimalOn = false;
+                                System.out.println("Decimal is now ON");
                                 break;
                             case 4:
                                 hexadecimalOn = true;
+                                System.out.println("Hexadecimal is now ON");
                                 break;
                         }
                         break;
@@ -341,6 +364,7 @@ public class ScientificCalculator {
                         System.out.println("\u2764\uFE0F");
                     } else if (emoji.equalsIgnoreCase("q")) {
                         riddleOn = false;
+                        customOn = true;
                         break;
                     }}
 
@@ -364,7 +388,20 @@ public class ScientificCalculator {
                             case "E":
                                 riddleOn = false;
                                 customOn = true;
-                                System.out.println("***** YOU WON!!! *****");
+                                System.out.println("***** CONGRATS!!! *****");
+                                System.out.println("____    ____  ______    __    __           \n" +
+                                        "\\   \\  /   / /  __  \\  |  |  |  |          \n" +
+                                        " \\   \\/   / |  |  |  | |  |  |  |          \n" +
+                                        "  \\_    _/  |  |  |  | |  |  |  |          \n" +
+                                        "    |  |    |  `--'  | |  `--'  |          \n" +
+                                        "    |__|     \\______/   \\______/           \n" +
+                                        "                                           \n" +
+                                        "____    __    ____  ______   .__   __.  __ \n" +
+                                        "\\   \\  /  \\  /   / /  __  \\  |  \\ |  | |  |\n" +
+                                        " \\   \\/    \\/   / |  |  |  | |   \\|  | |  |\n" +
+                                        "  \\            /  |  |  |  | |  . `  | |  |\n" +
+                                        "   \\    /\\    /   |  `--'  | |  |\\   | |__|\n" +
+                                        "    \\__/  \\__/     \\______/  |__| \\__| (__)");
                                 System.out.println("Press any key to exit.");
                                 String userExit = scanner.nextLine();
                                 break;

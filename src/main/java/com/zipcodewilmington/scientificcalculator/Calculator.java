@@ -6,26 +6,26 @@ public class Calculator {
     //this is Coreye's CODE!!!! because his Git doesn't work
     //anytime we do Calculator object just know it's from Coreye's code
 
-        public double add(double a, double b) {
-            System.out.println(">>> " + (a + b));
-            return a + b;
+    public double add(double a, double b) {
+        System.out.println(">>> " + (a + b));
+        return a + b;
+    }
+    public double subtract(double a, double b) {
+        System.out.println(">>> " + (a - b)); // method to subtract two numbers
+        return a-b;
+    }
+    public double multiply(double a, double b) { //method to multiply two numbers
+        System.out.println(">>> " + (a * b));
+        return a * b;
+    }
+    public double divide(double a, double b) {
+        if (b == 0) {
+            System.out.println("ERROR!!!");
+        } else {
+            System.out.println(">>> " + (a / b));
         }
-        public double subtract(double a, double b) {
-            System.out.println(">>> " + (a - b)); // method to subtract two numbers
-            return a-b;
-        }
-        public double multiply(double a, double b) { //method to multiply two numbers
-            System.out.println(">>> " + (a * b));
-            return a * b;
-        }
-        public double divide(double a, double b) {
-            if (b == 0) {
-                System.out.println("ERROR!!!");
-            } else {
-                System.out.println(">>> " + (a / b));
-            }
-            return a / b;
-        }
+        return a / b;
+    }
 
     public double squareRoot(double num) {
         if (num < 0) {
@@ -61,7 +61,7 @@ public class Calculator {
     }
 
 
-   // THIS IS AN ATTEMPT TO GET MEMORY VARIABLE WORKING!!!
+    // THIS IS AN ATTEMPT TO GET MEMORY VARIABLE WORKING!!!
 //    if (scanner.hasNextDouble){
 //        displayVar = scanner.nextDouble();
 //        System.out.println(displayVar);
@@ -77,7 +77,7 @@ public class Calculator {
 
 
 
-       //THIS SHOULD WORK FOR VARIABLE 2 INPUT THEORETICALLY
+    //THIS SHOULD WORK FOR VARIABLE 2 INPUT THEORETICALLY
 //       System.out.println("Select another number: [or type M: MRC]");
 //       if (scanner.hasNextDouble()){
 //        displayVar2 = scanner.nextDouble();
@@ -93,7 +93,6 @@ public class Calculator {
 
 
 }
-
 
 
 
