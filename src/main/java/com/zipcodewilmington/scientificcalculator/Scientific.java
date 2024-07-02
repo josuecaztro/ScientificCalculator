@@ -37,20 +37,26 @@ public class Scientific {
     }
 
     public double tan(double a) { //tan method
-        double inRad = Math.tan(a);
-        double inDeg = Math.toRadians(a);//calculate tan automatically in radian
-        Scanner radDeg = new Scanner(System.in);
-        System.out.println("Display in radians: R \nDisplay in degrees: D"); //Ask user if the want display in Radians or degrees
-        String entry = radDeg.nextLine();
-        if (entry.equalsIgnoreCase("R")) {  //conditional statement based on user response
-            System.out.println(">>> " + inRad);
-        } else if (entry.equalsIgnoreCase("D")) {
-            System.out.println(">>> " + Math.tan(inDeg)); //convert radians to degrees
-        } else {
-            System.out.println("ERR");
-        }//print
-        return inRad;
+        double solution = Math.tan(a);
+        return solution;
     }
+    public double degrees( double a) {
+        double degrees = Math.toDegrees(a);
+        return degrees;
+    }
+
+
+//        double inDeg = Math.toRadians(a);//calculate tan automatically in radian
+//        Scanner radDeg = new Scanner(System.in);
+//        System.out.println("Display in radians: R \nDisplay in degrees: D"); //Ask user if the want display in Radians or degrees
+//        String entry = radDeg.nextLine();
+//        if (entry.equalsIgnoreCase("R")) {  //conditional statement based on user response
+//            System.out.println(">>> " + inRad);
+//        } else if (entry.equalsIgnoreCase("D")) {
+//            System.out.println(">>> " + Math.tan(inDeg)); //convert radians to degrees
+//        } else {
+//            System.out.println("ERR")
+
 
 
     public static double inSin(double a) { //sin method
@@ -76,22 +82,22 @@ public class Scientific {
 
     public static double inCos(double a) { //sin method
         double inRad = Math.acos(a); //calculate sin automatically in radian
-        double inDeg = Math.toDegrees(inRad); // convert degree input into radian
-        Scanner radDeg = new Scanner(System.in);
-        System.out.println("Display in Radians: R \nDDisplay in Degrees: D"); //Ask user if the want display in Radians or degrees
-        String entry = radDeg.nextLine();
-        if (entry.equalsIgnoreCase("R")) {  //conditional statement based on user response
-            if (a >= -1 && a <= 1) {  // arccos is between -1 and 1. outside of that range is NaN
-                System.out.println(">>> " + inRad);
-            } else {
-                System.out.println("ERROR! Must be between -1 & 1!");
-            }
-        } else if (entry.equalsIgnoreCase("D")) {
-            System.out.println(">>> " + inDeg);
-//            System.out.println(">>> " + Math.acos(inDeg)); //convert radians back to degrees
-        } else {
-            System.out.println("ERR");
-        }//print
+//        double inDeg = Math.toDegrees(inRad); // convert degree input into radian
+//        Scanner radDeg = new Scanner(System.in);
+//        System.out.println("Display in Radians: R \nDisplay in Degrees: D"); //Ask user if the want display in Radians or degrees
+//        String entry = radDeg.nextLine();
+//        if (entry.equalsIgnoreCase("R")) {  //conditional statement based on user response
+//            if (a >= -1 && a <= 1) {  // arccos is between -1 and 1. outside of that range is NaN
+//                System.out.println(">>> " + inRad);
+//            } else {
+//                System.out.println("ERROR! Must be between -1 & 1!");
+//            }
+//        } else if (entry.equalsIgnoreCase("D")) {
+//            System.out.println(">>> " + inDeg);
+////            System.out.println(">>> " + Math.acos(inDeg)); //convert radians back to degrees
+//        } else {
+//            System.out.println("ERR");
+//        }//print
         return inRad;
     }
 
@@ -110,6 +116,10 @@ public class Scientific {
             System.out.println("ERR");
         }//print
         return inRad;
+    }
+
+    public double switchUnits(double input){
+        double
     }
 
 
